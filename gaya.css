@@ -1,0 +1,36 @@
+ body {
+        font-family: 'Segoe UI', sans-serif;
+        background: linear-gradient(to right, #f3f5f9, #e0e7ef);
+      }
+      .jumbotron {
+        padding-top: 6rem;
+        background: url('https://via.placeholder.com/600x400') center/cover no-repeat;
+        position: relative;
+      }
+      .jumbotron::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+      .jumbotron .container {
+        position: relative;
+        z-index: 2;
+        color: white;
+      }
+      .section-title {
+        font-weight: bold;
+        border-bottom: 3px solid #0d6efd;
+        display: inline-block;
+        margin-bottom: 1rem;
+      }
+      .rounded-img {
+        width: 160px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid white;
+      }
+      .bg-lightblue {
+        background-color: #eaf2fb;
+      }
