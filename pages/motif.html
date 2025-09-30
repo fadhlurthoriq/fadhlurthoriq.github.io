@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Motif - Batik Indonesia</title>
+    <link rel="icon" href="../img/logo.png" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="../img/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../img/logo.png">
+    <link rel="apple-touch-icon" href="../img/logo.png">
+    <link rel="stylesheet" href="../assets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-black text-white">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+        <div class="text-2xl font-display font-bold cursor-pointer">
+            <a href="index.html">
+                <img src="../img/logo.png" alt="Logo Batik" class="h-10 w-auto">
+            </a>
+        </div>
+        <div class="hidden md:flex space-x-8">
+            <a href="../index.html" class="nav-link hover:text-gray-300 transition">Beranda</a>
+            <a href="tentang.html" class="nav-link hover:text-gray-300 transition">Tentang</a>
+            <a href="motif.html" class="nav-link hover:text-gray-300 transition">Motif</a>
+            <a href="galeri.html" class="nav-link hover:text-gray-300 transition">Galeri</a>
+            <a href="sejarah.html" class="nav-link hover:text-gray-300 transition">Sejarah</a>
+            <a href="kontak.html" class="nav-link hover:text-gray-300 transition">Kontak</a>
+        </div>
+        <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2">
+        <a href="../index.html" class="block hover:text-gray-300 transition">Beranda</a>
+        <a href="tentang.html" class="block hover:text-gray-300 transition">Tentang</a>
+        <a href="motif.html" class="block hover:text-gray-300 transition">Motif</a>
+        <a href="galeri.html" class="block hover:text-gray-300 transition">Galeri</a>
+        <a href="sejarah.html" class="block hover:text-gray-300 transition">Sejarah</a>
+        <a href="kontak.html" class="block hover:text-gray-300 transition">Kontak</a>
+        </div>
+    </div>
+    </nav>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <div id="lightboxImage" class="w-full h-full bg-gray-800 rounded-lg"></div>
+        </div>
+    </div>
+    
+ 
+ <!-- HALAMAN MOTIF -->
+    <section id="motif" class="page">
+        <div class="pt-32 pb-20 px-6">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-12 scroll-animate">
+                    <h1 class="font-display text-6xl font-bold mb-4">Ragam Motif Batik</h1>
+                    <p class="text-gray-400 text-xl">12 Motif Pilihan dari Berbagai Daerah Nusantara</p>
+                </div>
+                
+                <div class="flex justify-center gap-4 mb-12 flex-wrap scroll-animate">
+                    <button onclick="filterMotif('all', this)" class="filter-btn bg-white text-black px-6 py-2 rounded-full font-semibold hover:bg-gray-200 transition">
+                        Semua
+                    </button>
+                    <button onclick="filterMotif('jawa', this)" class="filter-btn bg-transparent border border-white px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-black transition">
+                        Solo & Yogyakarta
+                    </button>
+                    <button onclick="filterMotif('jabar', this)" class="filter-btn bg-transparent border border-white px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-black transition">
+                        Jawa Barat
+                    </button>
+                    <button onclick="filterMotif('jatim', this)" class="filter-btn bg-transparent border border-white px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-black transition">
+                        Jawa Timur
+                    </button>
+                    <button onclick="filterMotif('kalimantan', this)" class="filter-btn bg-transparent border border-white px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-black transition">
+                        Kalimantan
+                    </button>
+                    <button onclick="filterMotif('kontemporer', this)" class="filter-btn bg-transparent border border-white px-6 py-2 rounded-full font-semibold hover:bg-white hover:text-black transition">
+                        Kontemporer
+                    </button>
+                </div>
+                
+                <div id="motifGrid" class="grid md:grid-cols-2 gap-12">
+                    <!-- Motif Parang -->
+                    <div class="motif-item scroll-animate" data-category="jawa">
+                        <div class="flex gap-6">
+                            <div class="w-48 h-48 flex-shrink-0 rounded-lg cursor-pointer relative overflow-hidden group" onclick="openLightbox(this)">
+                                <img src="../img/parang.jpeg" alt="Motif Parang" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                                    <span class="text-white text-sm font-semibold">Batik Parang</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-2">Solo & Yogyakarta</p>
+                                <h3 class="text-2xl font-display font-bold mb-3">Motif Parang</h3>
+                                <p class="text-gray-400 leading-relaxed">
+                                    Motif diagonal menyerupai ombak laut yang megah. Melambangkan kekuatan, keteguhan hati, dan semangat pantang menyerah.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Motif Kawung -->
+                    <div class="motif-item scroll-animate" data-category="jawa">
+                        <div class="flex gap-6">
+                            <div class="w-48 h-48 flex-shrink-0 rounded-lg cursor-pointer relative overflow-hidden group" onclick="openLightbox(this)">
+                                 <img src="../img/kawung.jpeg" alt="Motif Kawung" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                                    <span class="text-white text-sm font-semibold">Batik Kawung</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-2">Yogyakarta</p>
+                                <h3 class="text-2xl font-display font-bold mb-3">Motif Kawung</h3>
+                                <p class="text-gray-400 leading-relaxed">
+                                    Lingkaran geometris yang saling bersinggungan. Melambangkan kesempurnaan, keabadian, dan kesucian.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Motif Sidomukti -->
+                    <div class="motif-item scroll-animate" data-category="jawa">
+                        <div class="flex gap-6">
+                            <div class="w-48 h-48 flex-shrink-0 rounded-lg cursor-pointer relative overflow-hidden group" onclick="openLightbox(this)">
+                                 <img src="../img/sidomukti.jpeg" alt="Motif Sidomukti" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                                    <span class="text-white text-sm font-semibold">Batik Sidomukti</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-2">Solo</p>
+                                <h3 class="text-2xl font-display font-bold mb-3">Motif Sidomukti</h3>
+                                <p class="text-gray-400 leading-relaxed">
+                                    Motif penuh harapan dan doa baik. Sering digunakan dalam upacara pernikahan sebagai simbol kemakmuran.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Motif Mega Mendung -->
+                    <div class="motif-item scroll-animate" data-category="jabar">
+                        <div class="flex gap-6">
+                            <div class="w-48 h-48 flex-shrink-0 rounded-lg cursor-pointer relative overflow-hidden group" onclick="openLightbox(this)">
+                                 <img src="../img/mendung.png" alt="Motif Mega Mendung" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                                    <span class="text-white text-sm font-semibold">Batik Mega Mendung</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-2">Cirebon</p>
+                                <h3 class="text-2xl font-display font-bold mb-3">Motif Mega Mendung</h3>
+                                <p class="text-gray-400 leading-relaxed">
+                                    Awan mendung dengan gradasi indah. Perpaduan budaya Tiongkok, Jawa, dan Islam. Melambangkan kesabaran.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Motif Trusmi -->
+                    <div class="motif-item scroll-animate" data-category="jabar">
+                        <div class="flex gap-6">
+                           <div class="w-48 h-48 flex-shrink-0 rounded-lg cursor-pointer relative overflow-hidden group" onclick="openLightbox(this)">
+                                 <img src="../img/trusmi.jpeg" alt="Motif Trusmi" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                                    <span class="text-white text-sm font-semibold">Batik Trusmi</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-2">Cirebon</p>
+                                <h3 class="text-2xl font-display font-bold mb-3">Motif Trusmi</h3>
+                                <p class="text-gray-400 leading-relaxed">
+                                    Motif khas Trusmi dengan warna-warna cerah dan berani. Mencerminkan semangat pesisir yang dinamis.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Motif Sekar Jagad -->
+                    <div class="motif-item scroll-animate" data-category="jawa">
+                        <div class="flex gap-6">
+                            <div class="w-48 h-48 flex-shrink-0 rounded-lg cursor-pointer relative overflow-hidden group" onclick="openLightbox(this)">
+                                <img src="../img/sekar.jpeg" alt="Motif Sekar Jagad" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                                    <span class="text-white text-sm font-semibold">Batik Sekar Jagad</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-2">Yogyakarta</p>
+                                <h3 class="text-2xl font-display font-bold mb-3">Motif Sekar Jagad</h3>
+                                <p class="text-gray-400 leading-relaxed">
+                                    Bunga dunia yang melambangkan keindahan dan keberagaman. Mengajarkan tentang toleransi dan harmoni.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Motif Remeng -->
+                    <div class="motif-item scroll-animate" data-category="jatim">
+                        <div class="flex gap-6">
+                            <div class="w-48 h-48 flex-shrink-0 rounded-lg cursor-pointer relative overflow-hidden group" onclick="openLightbox(this)">
+                                <img src="../img/remeng.jpeg" alt="Motif Remeng" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                                    <span class="text-white text-sm font-semibold">Batik Remeng</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-2">Tuban</p>
+                                <h3 class="text-2xl font-display font-bold mb-3">Motif Remeng</h3>
+                                <p class="text-gray-400 leading-relaxed">
+                                    Motif klasik Tuban dengan garis-garis halus. Melambangkan kerapian dan ketelitian dalam hidup.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Motif Gedog -->
+                    <div class="motif-item scroll-animate" data-category="jatim">
+                        <div class="flex gap-6">
+                            <div class="w-48 h-48 flex-shrink-0 rounded-lg cursor-pointer relative overflow-hidden group" onclick="openLightbox(this)">
+                                <img src="../img/gedog.jpeg" alt="Motif Gedog" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                                    <span class="text-white text-sm font-semibold">Batik Gedog</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-2">Madura</p>
+                                <h3 class="text-2xl font-display font-bold mb-3">Motif Gedog</h3>
+                                <p class="text-gray-400 leading-relaxed">
+                                    Batik khas Madura dengan warna natural. Mencerminkan kesederhanaan dan kearifan lokal pesisir.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Motif Dayak -->
+                    <div class="motif-item scroll-animate" data-category="kalimantan">
+                        <div class="flex gap-6">
+                            <div class="w-48 h-48 flex-shrink-0 rounded-lg cursor-pointer relative overflow-hidden group" onclick="openLightbox(this)">
+                                <img src="../img/dayak.jpeg" alt="Motif Dayak" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                                    <span class="text-white text-sm font-semibold">Batik Dayak</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-2">Kalimantan Tengah</p>
+                                <h3 class="text-2xl font-bold mb-3">Motif Dayak</h3>
+                                <p class="text-gray-400 leading-relaxed">
+                                    Motif tribal khas suku Dayak. Menggambarkan kehidupan hutan, flora fauna, dan spiritualitas alam.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Motif Sasirangan -->
+                    <div class="motif-item scroll-animate" data-category="kalimantan">
+                        <div class="flex gap-6">
+                             <div class="w-48 h-48 flex-shrink-0 rounded-lg cursor-pointer relative overflow-hidden group" onclick="openLightbox(this)">
+                                <img src="../img/sasi.jpeg" alt="Motif Sasirangan" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                                    <span class="text-white text-sm font-semibold">Batik Sasirangan</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-2">Kalimantan Selatan</p>
+                                <h3 class="text-2xl font-display font-bold mb-3">Motif Sasirangan</h3>
+                                <p class="text-gray-400 leading-relaxed">
+                                    Batik jelujur khas Banjar dengan teknik unik. Dipercaya memiliki kekuatan spiritual dan penyembuhan.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Motif Kontemporer 1 -->
+                    <div class="motif-item scroll-animate" data-category="kontemporer">
+                        <div class="flex gap-6">
+                           <div class="w-48 h-48 flex-shrink-0 rounded-lg cursor-pointer relative overflow-hidden group" onclick="openLightbox(this)">
+                                <img src="../img/modern.webp" alt="Motif Modern" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                                    <span class="text-white text-sm font-semibold">Batik Modern</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-2">Jakarta</p>
+                                <h3 class="text-2xl font-display font-bold mb-3">Batik Modern Bold</h3>
+                                <p class="text-gray-400 leading-relaxed">
+                                    Batik kontemporer dengan warna bold dan berani. Menggabungkan tradisi dengan semangat urban modern.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Motif Kontemporer 2 -->
+                    <div class="motif-item scroll-animate" data-category="kontemporer">
+                        <div class="flex gap-6">
+                             <div class="w-48 h-48 flex-shrink-0 rounded-lg cursor-pointer relative overflow-hidden group" onclick="openLightbox(this)">
+                                <img src="../img/fusion.jpeg" alt="Motif Fusion" class="w-full h-full object-cover">
+                                <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                                    <span class="text-white text-sm font-semibold">Batik Fusion</span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-500 mb-2">Bandung</p>
+                                <h3 class="text-2xl font-display font-bold mb-3">Batik Fusion Minimalis</h3>
+                                <p class="text-gray-400 leading-relaxed">
+                                    Kesederhanaan dalam kompleksitas. Filosofi less is more dengan sentuhan tradisional yang elegan.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-950 border-t border-gray-800 py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-display text-2xl font-bold mb-4">BATIK</h3>
+                    <p class="text-gray-400 text-sm">Melestarikan warisan budaya Indonesia untuk generasi mendatang</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Menu</h4>
+                        <div class="space-y-2 text-sm">
+                            <a href="../index.html" class="block text-gray-400 hover:text-white transition">Beranda</a>
+                            <a href="tentang.html" class="block text-gray-400 hover:text-white transition">Tentang Batik</a>
+                            <a href="motif.html" class="block text-gray-400 hover:text-white transition">Motif</a>
+                            <a href="galeri.html" class="block text-gray-400 hover:text-white transition">Galeri</a>
+                            <a href="sejarah.html" class="block text-gray-400 hover:text-white transition">Sejarah</a>
+                        </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Informasi</h4>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <p>Jl. Ikan Piranha Atas, Tunjungsekar</p>
+                        <p>Kec. Lowokwaru, Kota Malang</p>
+                        <p>Jawa Timur 65142</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Kontak</h4>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <p>muhammadfthoriq@gmail.com</p>
+                        <p>+62 812-4950-4037</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 Batik Indonesia. Warisan Budaya Identitas Bangsa.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="../assets/script.js"></script>
+</body>
+</html>

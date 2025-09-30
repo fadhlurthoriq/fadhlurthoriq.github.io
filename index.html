@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Batik Indonesia</title>
+    <link rel="icon" href="img/logo.png" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/logo.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/logo.png">
+    <link rel="apple-touch-icon" href="img/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="bg-black text-white">
+    
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-black/95 backdrop-blur-sm z-50 border-b border-gray-800">
+    <div class="max-w-7xl mx-auto px-6 py-4">
+        <div class="flex justify-between items-center">
+        <div class="text-2xl font-display font-bold cursor-pointer">
+            <a href="index.html">
+                <img src="img/logo.png" alt="Logo Batik" class="h-10 w-auto">
+            </a>
+        </div>
+
+        <div class="hidden md:flex space-x-8">
+            <a href="index.html" class="nav-link hover:text-gray-300 transition">Beranda</a>
+            <a href="pages/tentang.html" class="nav-link hover:text-gray-300 transition">Tentang</a>
+            <a href="pages/motif.html" class="nav-link hover:text-gray-300 transition">Motif</a>
+            <a href="pages/galeri.html" class="nav-link hover:text-gray-300 transition">Galeri</a>
+            <a href="pages/sejarah.html" class="nav-link hover:text-gray-300 transition">Sejarah</a>
+            <a href="pages/kontak.html" class="nav-link hover:text-gray-300 transition">Kontak</a>
+        </div>
+        <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+        </div>
+        <div id="mobileMenu" class="hidden md:hidden mt-4 space-y-2">
+        <a href="index.html" class="block hover:text-gray-300 transition">Beranda</a>
+        <a href="pages/tentang.html" class="block hover:text-gray-300 transition">Tentang</a>
+        <a href="pages/motif.html" class="block hover:text-gray-300 transition">Motif</a>
+        <a href="pages/galeri.html" class="block hover:text-gray-300 transition">Galeri</a>
+        <a href="pages/sejarah.html" class="block hover:text-gray-300 transition">Sejarah</a>
+        <a href="pages/kontak.html" class="block hover:text-gray-300 transition">Kontak</a>
+        </div>
+    </div>
+    </nav>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <div class="lightbox-content">
+            <div id="lightboxImage" class="w-full h-full bg-gray-800 rounded-lg"></div>
+        </div>
+    </div>
+
+    <!-- HALAMAN BERANDA -->
+    <section id="beranda" class="page active">
+        <div class="min-h-screen flex items-center pt-20 px-6 bg-black">
+            <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 scroll-animate">
+                    <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight">
+                        Batik Indonesia.<br>
+                        Warisan Budaya.<br>
+                        Identitas Bangsa.
+                    </h1>
+                    <p class="text-gray-400 text-lg leading-relaxed">
+                        Batik bukan sekadar kain bermotif. Ia adalah cerita, filosofi, dan jati diri bangsa Indonesia yang diakui dunia. Setiap goresan canting membawa makna mendalam, menghubungkan masa lalu dengan masa kini.
+                    </p>
+                    <button onclick="navigateTo('motif')" 
+                            class="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition">
+                        Jelajahi Motif
+                    </button>
+                </div>
+                <div class="grid grid-cols-2 gap-4 scroll-animate">
+                    <div class="h-64 rounded-lg pattern-parang relative overflow-hidden group">
+                        <img src="img/sekar.jpeg" alt="Batik" class="w-full h-full object-cover">
+                    </div>
+                    <div class="h-64 rounded-lg pattern-mega mt-12 relative overflow-hidden group">
+                         <img src="img/remeng.jpeg" alt="Batik" class="w-full h-full object-cover">
+                    </div>
+                    <div class="h-64 rounded-lg pattern-kawung -mt-12 relative overflow-hidden group">
+                         <img src="img/gedog.jpeg" alt="Batik" class="w-full h-full object-cover">
+                    </div>
+                    <div class="h-64 rounded-lg pattern-sekar relative overflow-hidden group">
+                         <img src="img/fusion.jpeg" alt="Batik" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="py-20 px-6 bg-black">
+            <div class="max-w-7xl mx-auto">
+                <h2 class="font-display text-4xl font-bold mb-12 text-center scroll-animate">Perjalanan Batik</h2>
+                
+                <div class="relative">
+                    <div class="hidden md:block absolute left-0 right-0 h-0.5 bg-amber-600" style="top: 8px;"></div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8 relative">
+                        <div class="scroll-animate">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-4 h-4 bg-amber-600 rounded-full relative z-10"></div>
+                            </div>
+                            <div class="bg-black rounded-lg p-6">
+                                <div class="text-amber-600 font-bold mb-2">Abad 12-15</div>
+                                <h3 class="text-xl font-display font-bold mb-3">Era Majapahit</h3>
+                                <p class="text-gray-400 text-sm">Batik mulai dikenal di kalangan kerajaan sebagai simbol status sosial</p>
+                            </div>
+                        </div>
+                        
+                        <div class="scroll-animate">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-4 h-4 bg-amber-600 rounded-full relative z-10"></div>
+                            </div>
+                            <div class="bg-black rounded-lg p-6">
+                                <div class="text-amber-600 font-bold mb-2">2 Oktober 2009</div>
+                                <h3 class="text-xl font-display font-bold mb-3">Pengakuan UNESCO</h3>
+                                <p class="text-gray-400 text-sm">Batik Indonesia diakui sebagai Warisan Kemanusiaan untuk Budaya Lisan dan Nonbendawi</p>
+                            </div>
+                        </div>
+                        
+                        <div class="scroll-animate">
+                            <div class="flex justify-center mb-4">
+                                <div class="w-4 h-4 bg-amber-600 rounded-full relative z-10"></div>
+                            </div>
+                            <div class="bg-black rounded-lg p-6">
+                                <div class="text-amber-600 font-bold mb-2">Era Modern</div>
+                                <h3 class="text-xl font-display font-bold mb-3">Batik Mendunia</h3>
+                                <p class="text-gray-400 text-sm">Batik menjadi fashion global dan kebanggaan Indonesia di mata dunia</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-8">
+                    <button onclick="navigateTo('sejarah')" class="text-amber-600 font-semibold hover:text-amber-500 transition">
+                        Lihat Timeline Lengkap →
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Preview -->
+        <div class="py-20 px-6 bg-black">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex justify-between items-center mb-12">
+            <h2 class="font-display text-4xl font-bold scroll-animate">Galeri Batik</h2>
+            <a href="pages/galeri.html" class="text-amber-600 font-semibold hover:text-amber-500 transition">
+                Lihat Semua →
+            </a>
+            </div>
+
+            <!-- Masonry Columns -->
+            <div class="columns-1 sm:columns-2 md:columns-3 gap-4 space-y-4">
+            <!-- Preview Item 1 -->
+            <div class="scroll-animate">
+                <a href="pages/galeri.html" class="block relative overflow-hidden rounded-lg bg-gradient-to-br from-amber-900 to-amber-700 group cursor-pointer">
+                    <img src="img/galeri/3.png" alt="Galeri" class="w-full h-auto object-cover aspect-[3/4]">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                    <span class="text-white text-sm font-semibold">Lihat Galeri</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Preview Item 2 -->
+            <div class="scroll-animate">
+                <a href="pages/galeri.html" class="block relative overflow-hidden rounded-lg bg-gradient-to-br from-blue-900 to-blue-700 group cursor-pointer">
+                    <img src="img/galeri/4.png" alt="Galeri" class="w-full h-auto object-cover aspect-square">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                    <span class="text-white text-sm font-semibold">Lihat Galeri</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="scroll-animate">
+                <!-- Preview Item 3 -->
+                <a href="pages/galeri.html" class="block relative overflow-hidden rounded-lg bg-gradient-to-br from-purple-900 to-pink-800 group cursor-pointer">
+                    <img src="img/galeri/6.png" alt="Galeri" class="w-full h-auto object-cover aspect-square">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                    <span class="text-white text-sm font-semibold">Lihat Galeri</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="scroll-animate">
+                <a href="pages/galeri.html" class="block relative overflow-hidden rounded-lg bg-gradient-to-br from-purple-900 to-pink-800 group cursor-pointer">
+                    <img src="img/galeri/5.png" alt="Galeri" class="w-full h-auto object-cover aspect-[2/3]">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                    <span class="text-white text-sm font-semibold">Lihat Galeri</span>
+                    </div>
+                </a>
+            </div>
+
+            <div class="scroll-animate">
+                <!-- Preview Item 3 -->
+                <a href="pages/galeri.html" class="block relative overflow-hidden rounded-lg bg-gradient-to-br from-purple-900 to-pink-800 group cursor-pointer">
+                    <img src="img/galeri/2.png" alt="Galeri" class="w-full h-auto object-cover aspect-[3/4]">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                    <span class="text-white text-sm font-semibold">Lihat Galeri</span>
+                    </div>
+                </a>
+            </div>                
+            <div class="scroll-animate">
+                <a href="pages/galeri.html" class="block relative overflow-hidden rounded-lg bg-gradient-to-br from-purple-900 to-pink-800 group cursor-pointer">
+                    <img src="img/galeri/1.png" alt="Galeri" class="w-full h-auto object-cover aspect-[3/3]">
+                    <div class="absolute inset-0 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition">
+                    <span class="text-white text-sm font-semibold">Lihat Galeri</span>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Tambah item preview lain tinggal copy -->
+            </div>
+        </div>
+        </div>
+
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-950 border-t border-gray-800 py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="font-display text-2xl font-bold mb-4">BATIK</h3>
+                    <p class="text-gray-400 text-sm">Melestarikan warisan budaya Indonesia untuk generasi mendatang</p>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Menu</h4>
+                        <div class="space-y-2 text-sm">
+                            <a href="index.html" class="block text-gray-400 hover:text-white transition">Beranda</a>
+                            <a href="pages/tentang.html" class="block text-gray-400 hover:text-white transition">Tentang Batik</a>
+                            <a href="pages/motif.html" class="block text-gray-400 hover:text-white transition">Motif</a>
+                            <a href="pages/galeri.html" class="block text-gray-400 hover:text-white transition">Galeri</a>
+                            <a href="pages/sejarah.html" class="block text-gray-400 hover:text-white transition">Sejarah</a>
+                        </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Informasi</h4>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <p>Jl. Ikan Piranha Atas, Tunjungsekar</p>
+                        <p>Kec. Lowokwaru, Kota Malang</p>
+                        <p>Jawa Timur 65142</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Kontak</h4>
+                    <div class="space-y-2 text-sm text-gray-400">
+                        <p>muhammadfthoriq@gmail.com</p>
+                        <p>+62 812-4950-4037</p>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 Batik Indonesia. Warisan Budaya Identitas Bangsa.</p>
+            </div>
+        </div>
+    </footer>
+    <script src="assets/script.js"></script>
+</body>
+</html>
